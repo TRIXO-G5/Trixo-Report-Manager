@@ -16,7 +16,7 @@ public class ApiController {
     	Post[] posts = new Post[0];
     	try {
     		RestTemplate restTemplate = new RestTemplate();
-    		posts = restTemplate.getForObject(API_URL + "/getPostsByStatus/{status}", Post[].class, status);
+    		posts = restTemplate.getForObject(API_URL + "/{status}/status", Post[].class, status);
     	} catch (Exception e) {
     		e.printStackTrace();
     	}
@@ -38,7 +38,4 @@ public class ApiController {
     	    e.printStackTrace();
     	}
     }
-    
-    
-	
 }

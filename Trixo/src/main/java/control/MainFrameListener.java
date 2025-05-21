@@ -28,9 +28,9 @@ public class MainFrameListener implements ActionListener {
 			} else if (e.getSource() == mainFrame.getBtnImgNext()) {
 				mainFrame.showNextImage();
 			} else if (e.getSource() == mainFrame.getBtnBan()) {
-				nextPost("Banned");
+				updateStatus("Banned");
 			} else if (e.getSource() == mainFrame.getBtnSpare()) {
-				nextPost("notReported");
+				updateStatus("notReported");
 			} else if (e.getSource() == mainFrame.getBtnRefresh()) {
 				getOnRevisionPosts();
 			}
@@ -38,7 +38,7 @@ public class MainFrameListener implements ActionListener {
 		
 	}
 
-	private void nextPost(String status) {
+	private void updateStatus(String status) {
 		apiController.updatePostStatus(mainFrame.getCurrentPost().getId(), status);
 		mainFrame.nextPost();
 	}
