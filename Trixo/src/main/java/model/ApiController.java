@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 public class ApiController {
 
-	private static final String API_URL = "http://localhost:8080/api/posts";
+	private static final String API_URL = "http://143.47.51.248:43433/api/posts";
 	
     public List<Post> getOnRevisionPosts(String status) {
     	Post[] posts = new Post[0];
